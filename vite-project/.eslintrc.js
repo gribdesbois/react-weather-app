@@ -26,11 +26,12 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', 'tsx'] }],
+    'react/jsx-filename-extension': [
+      1,
+      { extensions: ['.js', '.jsx', '.ts', 'tsx'] },
+    ],
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react'],
   extends: [
     /* 'eslint:recommended', */
     'airbnb-base',
@@ -39,6 +40,6 @@ module.exports = {
     'prettier',
     'eslint-config-prettier',
     'eslint-plugin-import',
+    'eslint-plugin-prettier',
   ],
-
-};
+}
