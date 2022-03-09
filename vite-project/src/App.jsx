@@ -13,7 +13,7 @@ function App() {
   const [hasError, setHasError] = useState(false)
 
   const getWeather = async () => {
-    const url = `https://${VITE_API_URL}?lat=${lat}&lon=${long}&appid=${VITE_API_KEY}&units="metrics"`
+    const url = `https://${VITE_API_URL}?lat=${lat}&lon=${long}&appid=${VITE_API_KEY}&units=metric&lang=en`
 
     try {
       const res = await axios.get(url)
