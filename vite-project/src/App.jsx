@@ -64,11 +64,7 @@ function App() {
   if (isLoaded && !hasError) {
     return (
       <div className="App">
-        {typeof data.main != 'undefined' ? (
-          <Weather weatherData={data} />
-        ) : (
-          <div></div>
-        )}
+        <Weather weatherData={data} />
       </div>
     )
   }
