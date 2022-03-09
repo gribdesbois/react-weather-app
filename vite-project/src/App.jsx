@@ -1,8 +1,10 @@
+import { Dimmer, Loader } from 'semantic-ui-react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import './App.css'
 import Weather from './components/Weather'
+
 const { VITE_API_KEY, VITE_API_URL } = import.meta.env
 
 function App() {
@@ -57,8 +59,13 @@ function App() {
     }
   }, [lat, long])
 
-  if (hasError) return <div>Error ... </div>
-  if (!isLoaded) return <div>Loading...</div>
+  if (hasError || !isLoaded)
+    return (
+      <Dimmer active>
+        <Loader>Loading...</Loader>
+      </Dimmer>
+    )
+
   console.log('Latitude is:', lat)
   console.log('Longitude is:', long)
   if (isLoaded && !hasError) {
